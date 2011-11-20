@@ -1,0 +1,40 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>New <%= @studentinfo.title %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :create %>">
+      <input type="hidden" name="id" value="<%= @studentinfo.object %>"/>
+
+      
+          <div data-role="fieldcontain">
+            <label for="studentinfo[name]" class="fieldLabel">Name</label>
+            <input type="text" id="studentinfo[name]" name="studentinfo[name]" <%= placeholder("Name") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="studentinfo[zip]" class="fieldLabel">Zip</label>
+            <input type="text" id="studentinfo[zip]" name="studentinfo[zip]" <%= placeholder("Zip") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="studentinfo[exam]" class="fieldLabel">Exam</label>
+            <input type="text" id="studentinfo[exam]" name="studentinfo[exam]" <%= placeholder("Exam") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="studentinfo[subject]" class="fieldLabel">Subject</label>
+            <input type="text" id="studentinfo[subject]" name="studentinfo[subject]" <%= placeholder("Subject") %> />
+          </div>
+      
+
+      <input type="submit" value="Create"/>
+    </form>
+  </div>
+
+</div>

@@ -1,0 +1,36 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>Edit <%= @tutorinfo.name %></h1>
+    <a href="<%= url_for :action => :show, :id => @tutorinfo.object %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+    <a href="<%= url_for :action => :delete, :id => @tutorinfo.object %>" class="ui-btn-right" data-icon="delete" data-direction="reverse">
+      Delete
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :update %>">
+      <input type="hidden" name="id" value="<%= @tutorinfo.object %>"/>
+      
+          <div data-role="fieldcontain">
+            <label for="tutorinfo[name]" class="fieldLabel">Name</label>
+            <input type="text" id="tutorinfo[name]" name="tutorinfo[name]" value="<%= @tutorinfo.name %>" <%= placeholder( "Name" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="tutorinfo[zip]" class="fieldLabel">Zip</label>
+            <input type="text" id="tutorinfo[zip]" name="tutorinfo[zip]" value="<%= @tutorinfo.zip %>" <%= placeholder( "Zip" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="tutorinfo[subjects]" class="fieldLabel">Subjects</label>
+            <input type="text" id="tutorinfo[subjects]" name="tutorinfo[subjects]" value="<%= @tutorinfo.subjects %>" <%= placeholder( "Subjects" ) %> />
+          </div>
+      
+      <input type="submit" value="Update"/>
+    </form>
+  </div>
+
+</div>
